@@ -20,9 +20,9 @@ func main() {
 	flag.Parse()
 
 	// example: 9a25c95e-36df-11e9-80ed-0050569f2e9f
-	uuidRegexp := regexp.MustCompile("(([0-9a-f]){8}-(([0-9a-f]){4}-){3}([0-9a-f]){12})")
+	uuidRegexp := regexp.MustCompile("(([0-9a-fA-F]){8}-(([0-9a-fA-F]){4}-){3}([0-9a-fA-F]){12})")
 	// example: 80ed0050569f2e9f11e936df9a25c95e
-	refRegexp := regexp.MustCompile("([0-9a-f]){32}")
+	refRegexp := regexp.MustCompile("([0-9a-fA-F]){32}")
 
 	if uuid != "" && uuidRegexp.MatchString(uuid) {
 		ref, err = uuid2Ref(uuid)
